@@ -1,0 +1,65 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package praktikum4.soal2;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author DELL
+ */
+public class Soal2Main {
+   public static void main(String[] args) {
+       Scanner keyboard = new Scanner(System.in);
+       int pilihan;
+       
+       System.out.println("Pilih buku yang ingin diinputkan:");
+       System.out.println("1 = Novel");
+       System.out.println("2 = Komik");
+       System.out.print("Masukkan pilihan: ");
+       pilihan = Integer.parseInt(keyboard.nextLine());       
+       
+       if (pilihan == 1) {
+           String j, p, t, g, s;
+           
+           System.out.print("Judul: ");
+           j = keyboard.nextLine();
+           System.out.print("Penulis : ");
+           p = keyboard.nextLine();
+           System.out.print("Tahun Terbit : ");
+           t = keyboard.nextLine();
+
+           System.out.print("Genre : ");
+           g = keyboard.nextLine();
+           System.out.print("Sinopsis : ");
+           s = keyboard.nextLine();
+           
+           Novel buku = new Novel(j, p, t, g, s);
+           
+           System.out.println(buku.getNovelDetail());
+       } else if (pilihan == 2) {
+           Integer v;
+           String j, p, t, s;
+           
+           System.out.print("Judul: ");
+           j = keyboard.nextLine();
+           System.out.print("Penulis : ");
+           p = keyboard.nextLine();
+           System.out.print("Tahun Terbit : ");
+           t = keyboard.nextLine();           
+           
+           System.out.print("Volume : ");
+           v = Integer.valueOf(keyboard.nextLine());
+           System.out.print("Sinopsis : ");
+           s = keyboard.nextLine();
+           
+           Komik buku = new Komik(j, p, t, v, s);
+           
+           System.out.println(buku.getKomikDetail());
+       } else {
+           System.out.println("Input hanya boleh 1 atau 2!");
+       }
+   }
+}
